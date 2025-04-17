@@ -17,7 +17,7 @@ indicators.
 
 3. tools.py : Contains functions used in spectra_pipeline.ipynb and plot_results.ipynb. 
 
-4. final_calcs.csv : These are dataproducts from the Solaster pipeline, which calculates solar activity indicators using Solar Dynamics 
+4. final_calcsold.csv : These are dataproducts from the Solaster pipeline, which calculates solar activity indicators using Solar Dynamics 
 Observatory data.
 
 5. new_gurtovenko_2015.csv : Theoretical line list pulled from Gurtovenko et al. 2015. Observed lines are matched to theoretical ones from 
