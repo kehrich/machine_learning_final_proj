@@ -35,19 +35,13 @@ We average these 3 files per day to create 20 total templates. An example templa
 
 <img width="891" alt="Screenshot 2025-04-17 at 3 12 22 PM" src="https://github.com/user-attachments/assets/9a921aec-c9b2-4be8-a4b7-689caec3ca81" />
 
+Once these templates are created, they are fed into the line-by-line pipeline. This goes through each individual line list wavelength, and finds where it should
+be located in the observed NEID spectrum (the template). Once a line is identified, a modified Gaussian is fit to it, and FWHM and Depth are recorded.
+Below shows an example of a single absorption line from the NEID spectra, along with the parameters that are measured.
 
-and uses
-a linelist and these templates in the line-by-line analysis to match observed lines to theoretical ones and measure their parameter variations
-for each day. These measured dataproducts are saved to a .csv file, so they can be read-in in plot_results.ipynb.
-
-Below shows an example of a single absorption line from the NEID spectra. The spectra
 <img width="443" alt="Screenshot 2025-04-17 at 2 42 59 PM" src="https://github.com/user-attachments/assets/54a4eaf4-d6a3-4431-8e37-cdfd77397e96" />
 
-
-
-
-
-
+These parameters are written to a .csv file in the user's directory, so they can be read in in the second notebook, plot_results.
 
 3. plot_results.ipynb : This notebook reads in the dataproducts from the pipeline for analysis. Pearson correlation coefficients are
 calculated between line parameters and solar activity indicators. Then, k-means clustering is performed to identify groups of activity
