@@ -33,13 +33,22 @@ There are 3 .fits files containing spectra per day taken near solar noon over th
 create a template for each day. A template is a daily-averaged spectrum, and increases the SNR of our data while also filling in data gaps or nan values.
 We average these 3 files per day to create 20 total templates. An example template spectrum is shown below:
 
+
+
 <img width="891" alt="Screenshot 2025-04-17 at 3 12 22 PM" src="https://github.com/user-attachments/assets/9a921aec-c9b2-4be8-a4b7-689caec3ca81" />
+
+
+
 
 Once these templates are created, they are fed into the line-by-line pipeline. This goes through each individual line list wavelength, and finds where it should
 be located in the observed NEID spectrum (the template). Once a line is identified, a modified Gaussian is fit to it, and FWHM and Depth are recorded.
 Below shows an example of a single absorption line from the NEID spectra, along with the parameters that are measured.
 
+
+
 <img width="443" alt="Screenshot 2025-04-17 at 2 42 59 PM" src="https://github.com/user-attachments/assets/54a4eaf4-d6a3-4431-8e37-cdfd77397e96" />
+
+
 
 These parameters are written to a .csv file in the user's directory, so they can be read in in the second notebook, plot_results.
 
@@ -51,7 +60,11 @@ which calculates solar activity indicators using Solar Dynamics Observatory Data
 The solar activity indicators are taken daily, but are interpolated to the same time as our NEID observations. An example time series of a solar activity indicator is
 shown below.
 
+
+
 <img width="355" alt="Screenshot 2025-04-17 at 4 40 22 PM" src="https://github.com/user-attachments/assets/5e6e44e5-4813-43f3-92ef-0a5de6af217c" />
+
+
 
 We then calculate four Pearson Correlation Coefficients (PCC) for each line--Depth vs. B_obs, FWHM vs. B_obs, Depth vs. S-Index, and FWHM vs. S-Index. We then
 identify which lines make the PCC > 3.0 threshold for being activity-sensitive. We run a PCA on these data and use K-Means clustering with 4 clusters to
@@ -62,9 +75,13 @@ than the activity indicator that is chosen. This has ramifications for future RV
 lines which need to be removed from RV analysis.
 
 
+
+
 <img width="425" alt="Screenshot 2025-04-17 at 4 57 20 PM" src="https://github.com/user-attachments/assets/567a93c7-2a9e-4954-8aa1-9b65811d0af1" />
 
 <img width="425" alt="Screenshot 2025-04-17 at 5 06 33 PM" src="https://github.com/user-attachments/assets/1a36b14e-f01b-4a21-bf5d-fbf689125881" />
+
+
 
 3. tools.py : Contains functions used in spectra_pipeline.ipynb and plot_results.ipynb. Included in the import statements.
 
