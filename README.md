@@ -15,7 +15,7 @@ for each day. These measured dataproducts are saved to a .csv file, so they can 
 calculated between line parameters and solar activity indicators. Then, k-means clustering is performed to identify groups of activity
 indicators.
 
-3. tools.py : Contains functions used in spectra_pipeline.ipynb and plot_results.ipynb. 
+3. tools.py : Contains functions used in spectra_pipeline.ipynb and plot_results.ipynb. Included in the import statements.
 
 4. final_calcsold.csv : These are dataproducts from the Solaster pipeline, which calculates solar activity indicators using Solar Dynamics 
 Observatory data.
