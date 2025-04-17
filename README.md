@@ -43,16 +43,21 @@ Below shows an example of a single absorption line from the NEID spectra, along 
 
 These parameters are written to a .csv file in the user's directory, so they can be read in in the second notebook, plot_results.
 
-3. plot_results.ipynb : This notebook reads in the dataproducts from the pipeline for analysis. Pearson correlation coefficients are
+3. plot_results.ipynb : This notebook reads in the dataproducts from the .csv file created by the pipeline for analysis. Activity indicators trace
+stars' activity levels. We will be using two for our analysis. The first is Ca II H & K S-Index, which is a NEID data product that we pull
+from the .fits file. This index is calculated using the Ca II H and Ca II K absorption lines, which are two extremely magnetically-sensitive lines.
+The second is B_obs, technically called unsigned magnetic flux, which is a proxy for the Sun's magnetic field strength.
+5.
+6.   Pearson correlation coefficients are
 calculated between line parameters and solar activity indicators. Then, k-means clustering is performed to identify groups of activity
 indicators.
 
-4. tools.py : Contains functions used in spectra_pipeline.ipynb and plot_results.ipynb. Included in the import statements.
+7. tools.py : Contains functions used in spectra_pipeline.ipynb and plot_results.ipynb. Included in the import statements.
 
-5. final_calcsold.csv : These are dataproducts from the Solaster pipeline, which calculates solar activity indicators using Solar Dynamics 
+8. final_calcsold.csv : These are dataproducts from the Solaster pipeline, which calculates solar activity indicators using Solar Dynamics 
 Observatory data.
 
-6. new_gurtovenko_2015.csv : Theoretical line list pulled from Gurtovenko et al. 2015. Observed lines are matched to theoretical ones from 
+9. new_gurtovenko_2015.csv : Theoretical line list pulled from Gurtovenko et al. 2015. Observed lines are matched to theoretical ones from 
 this list based upon theoretical wavelength and theoretical line depth. If two observed lines are approximately equidistant from the
 theoretical line, the observed line with the depth closest to the theoretical depth is selected.
 
