@@ -12,7 +12,7 @@ to "wiggle" about the center of gravity between the two objects. This creates a 
 and red-shifted when it moves away from us. We can observe this effect through spectroscopy, which is a method of separating light into its component parts
 by wavelength using a diffraction grating. We observe the Doppler shift in the star's spectrum, as seen below.
 
-<img width="733" alt="image" src="https://github.com/user-attachments/assets/61169d92-72fe-4602-9734-629fd20d7ede" />
+![Radial_velocity_doppler_spectroscopy](https://github.com/user-attachments/assets/defe75d8-135b-4126-a731-2cbc2988de45)
 
 
 It is divided into the following files, and notebooks should be run in this order:
