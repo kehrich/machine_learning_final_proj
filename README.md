@@ -43,7 +43,7 @@ Below shows an example of a single absorption line from the NEID spectra, along 
 
 These parameters are written to a .csv file in the user's directory, so they can be read in in the second notebook, plot_results.
 
-3. plot_results.ipynb : This notebook reads in the dataproducts from the .csv file created by the pipeline for analysis. Activity indicators trace
+2. plot_results.ipynb : This notebook reads in the dataproducts from the .csv file created by the pipeline for analysis. Activity indicators trace
 stars' activity levels. We will be using two for our analysis. The first is Ca II H & K S-Index, which is a NEID data product that we pull
 from the .fits file. This index is calculated using the Ca II H and Ca II K absorption lines, which are two extremely magnetically-sensitive lines.
 The second is B_obs, technically called unsigned magnetic flux, which is a proxy for the Sun's magnetic field strength. We use Solaster, a package
@@ -53,21 +53,28 @@ shown below.
 
 <img width="355" alt="Screenshot 2025-04-17 at 4 40 22 PM" src="https://github.com/user-attachments/assets/5e6e44e5-4813-43f3-92ef-0a5de6af217c" />
 
+We then calculate four Pearson Correlation Coefficients (PCC) for each line--Depth vs. B_obs, FWHM vs. B_obs, Depth vs. S-Index, and FWHM vs. S-Index. We then
+identify which lines make the PCC > 3.0 threshold for being activity-sensitive. We run a PCA on these data and use K-Means clustering with 4 clusters to
+see the separations between different correlation coefficients. We then create a dataframe with all the correlation coefficents, including those that do not
+meet the threshold for being activity-sensitive, and run a PCA. We perform K-means clustering on this data with 2 clusters, to identify activity-sensitive
+versus activity-insensitive lines in an alternative way. We see that the line parameter that is chosen for correlation has a stronger influence over grouping 
+than the activity indicator that is chosen. This has ramifications for future RV studies, because multiple line parameters should be used to identify activity-sensitive 
+lines which need to be removed from RV analysis.
 
 
-6.   Pearson correlation coefficients are
-calculated between line parameters and solar activity indicators. Then, k-means clustering is performed to identify groups of activity
-indicators.
+<img width="425" alt="Screenshot 2025-04-17 at 4 57 20 PM" src="https://github.com/user-attachments/assets/567a93c7-2a9e-4954-8aa1-9b65811d0af1" />
 
-7. tools.py : Contains functions used in spectra_pipeline.ipynb and plot_results.ipynb. Included in the import statements.
+<img width="442" alt="Screenshot 2025-04-17 at 5 06 33 PM" src="https://github.com/user-attachments/assets/1a36b14e-f01b-4a21-bf5d-fbf689125881" />
 
-8. final_calcsold.csv : These are dataproducts from the Solaster pipeline, which calculates solar activity indicators using Solar Dynamics 
+3. tools.py : Contains functions used in spectra_pipeline.ipynb and plot_results.ipynb. Included in the import statements.
+
+4. final_calcsold.csv : These are dataproducts from the Solaster pipeline, which calculates solar activity indicators using Solar Dynamics 
 Observatory data.
 
-9. new_gurtovenko_2015.csv : Theoretical line list pulled from Gurtovenko et al. 2015. Observed lines are matched to theoretical ones from 
+5. new_gurtovenko_2015.csv : Theoretical line list pulled from Gurtovenko et al. 2015. Observed lines are matched to theoretical ones from 
 this list based upon theoretical wavelength and theoretical line depth. If two observed lines are approximately equidistant from the
 theoretical line, the observed line with the depth closest to the theoretical depth is selected.
 
-Link to neid_solar_data on Google Drive: https://drive.google.com/file/d/1sRNEKcAEOc93sTisQP-flMgLUUpcklcV/view?usp=drive_link
+6. Link to neid_solar_data on Google Drive: https://drive.google.com/file/d/1sRNEKcAEOc93sTisQP-flMgLUUpcklcV/view?usp=drive_link
 Folder containing 3 NEID .fits solar files over the course of 20 days near solar noon. These are used to create
 the templates.
