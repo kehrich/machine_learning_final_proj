@@ -1,4 +1,4 @@
-# machine_learning_final_proj
+# Identifying Activity-Sensitive Lines in the Sun Using K-Means Clustering
 
 This repository is a guide to fitting spectral lines to identify potential activity-sensitive lines that could interfere with radial
 velocity detections. NEID files are made into templates, which are fed into the pipeline to pull out line parameters. A .csv file is saved
