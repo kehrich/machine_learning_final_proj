@@ -46,8 +46,15 @@ These parameters are written to a .csv file in the user's directory, so they can
 3. plot_results.ipynb : This notebook reads in the dataproducts from the .csv file created by the pipeline for analysis. Activity indicators trace
 stars' activity levels. We will be using two for our analysis. The first is Ca II H & K S-Index, which is a NEID data product that we pull
 from the .fits file. This index is calculated using the Ca II H and Ca II K absorption lines, which are two extremely magnetically-sensitive lines.
-The second is B_obs, technically called unsigned magnetic flux, which is a proxy for the Sun's magnetic field strength.
-5.
+The second is B_obs, technically called unsigned magnetic flux, which is a proxy for the Sun's magnetic field strength. We use Solaster, a package
+which calculates solar activity indicators using Solar Dynamics Observatory Data. Because there isn't data for a few of our days, we had to cut out two NEID templates.
+The solar activity indicators are taken daily, but are interpolated to the same time as our NEID observations. An example time series of a solar activity indicator is
+shown below.
+
+<img width="355" alt="Screenshot 2025-04-17 at 4 40 22 PM" src="https://github.com/user-attachments/assets/5e6e44e5-4813-43f3-92ef-0a5de6af217c" />
+
+
+
 6.   Pearson correlation coefficients are
 calculated between line parameters and solar activity indicators. Then, k-means clustering is performed to identify groups of activity
 indicators.
