@@ -14,10 +14,29 @@ by wavelength using a diffraction grating. We observe the Doppler shift in the s
 
 ![Radial_velocity_doppler_spectroscopy](https://github.com/user-attachments/assets/defe75d8-135b-4126-a731-2cbc2988de45)
 
+Unfortunately, the star has a very active atmosphere, which can distort spectral lines, and interfere with RV signals. In fact, in order to detect an Earth-like planet around 
+a star similar in size to our Sun, we would need to be able to detect a velocity of ~9 cm/s, but stellar activity creates a noise floor around 1 m/s, nearly an order of
+magnitude above this signal. Thus, it is important to figure out which spectral lines are magnetically-sensitive, so our RV detections are less-prone to
+contamination from the stellar surface. We begin with a line list created for the Sun, which uses physics and radiative-transfer code to calculate
+theoretical wavelength, depth, and full-width half-maximum (FWHM) values for spectral lines we should observe in the Sun. This is the motivation for this project. 
 
-It is divided into the following files, and notebooks should be run in this order:
+## Here is an outline of the project:
 
-1. spectra_pipeline.ipynb : Begin with this notebook. This notebook reads in NEID spectra, creates a template (daily-averaged spectrum) for each day, and uses
+1. spectra_pipeline.ipynb : Begin with this notebook. This notebook starts with reading in NEID spectra, which are in the format of .fits files with can be found
+at the Google Drive link below:
+
+Link to neid_solar_data on Google Drive: https://drive.google.com/file/d/1sRNEKcAEOc93sTisQP-flMgLUUpcklcV/view?usp=drive_link
+Folder containing 3 NEID .fits solar files over the course of 20 days near solar noon. These are used to create
+the templates.
+
+There are 3 .fits files containing spectra per day taken near solar noon over the course of 20 days. Using these files, we then
+create a template for each day. A template is a daily-averaged spectrum, and increases the SNR of our data while also filling in data gaps or nan values.
+We average these 3 files per day to create 20 total templates. An example template spectrum is shown below:
+
+<img width="891" alt="Screenshot 2025-04-17 at 3 12 22 PM" src="https://github.com/user-attachments/assets/9a921aec-c9b2-4be8-a4b7-689caec3ca81" />
+
+
+and uses
 a linelist and these templates in the line-by-line analysis to match observed lines to theoretical ones and measure their parameter variations
 for each day. These measured dataproducts are saved to a .csv file, so they can be read-in in plot_results.ipynb.
 
