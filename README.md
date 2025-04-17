@@ -11,16 +11,24 @@ It is divided into the following files, and notebooks should be run in this orde
 a linelist and these templates in the line-by-line analysis to match observed lines to theoretical ones and measure their parameter variations
 for each day. These measured dataproducts are saved to a .csv file, so they can be read-in in plot_results.ipynb.
 
-2. plot_results.ipynb : This notebook reads in the dataproducts from the pipeline for analysis. Pearson correlation coefficients are
+<img width="443" alt="Screenshot 2025-04-17 at 2 42 59 PM" src="https://github.com/user-attachments/assets/54a4eaf4-d6a3-4431-8e37-cdfd77397e96" />
+
+
+
+
+
+
+
+3. plot_results.ipynb : This notebook reads in the dataproducts from the pipeline for analysis. Pearson correlation coefficients are
 calculated between line parameters and solar activity indicators. Then, k-means clustering is performed to identify groups of activity
 indicators.
 
-3. tools.py : Contains functions used in spectra_pipeline.ipynb and plot_results.ipynb. Included in the import statements.
+4. tools.py : Contains functions used in spectra_pipeline.ipynb and plot_results.ipynb. Included in the import statements.
 
-4. final_calcsold.csv : These are dataproducts from the Solaster pipeline, which calculates solar activity indicators using Solar Dynamics 
+5. final_calcsold.csv : These are dataproducts from the Solaster pipeline, which calculates solar activity indicators using Solar Dynamics 
 Observatory data.
 
-5. new_gurtovenko_2015.csv : Theoretical line list pulled from Gurtovenko et al. 2015. Observed lines are matched to theoretical ones from 
+6. new_gurtovenko_2015.csv : Theoretical line list pulled from Gurtovenko et al. 2015. Observed lines are matched to theoretical ones from 
 this list based upon theoretical wavelength and theoretical line depth. If two observed lines are approximately equidistant from the
 theoretical line, the observed line with the depth closest to the theoretical depth is selected.
 
