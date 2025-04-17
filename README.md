@@ -24,5 +24,5 @@ Observatory data.
 this list based upon theoretical wavelength and theoretical line depth. If two observed lines are approximately equidistant from the
 theoretical line, the observed line with the depth closest to the theoretical depth is selected.
 
-6. neid_solar_data : Folder containing 3 NEID .fits solar files over the course of 20 days near solar noon. These are used to create
+6. Link to neid_solar_data on Google Drive: Folder containing 3 NEID .fits solar files over the course of 20 days near solar noon. These are used to create
 the templates.
