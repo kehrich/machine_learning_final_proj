@@ -64,7 +64,7 @@ lines which need to be removed from RV analysis.
 
 <img width="425" alt="Screenshot 2025-04-17 at 4 57 20 PM" src="https://github.com/user-attachments/assets/567a93c7-2a9e-4954-8aa1-9b65811d0af1" />
 
-<img width="442" alt="Screenshot 2025-04-17 at 5 06 33 PM" src="https://github.com/user-attachments/assets/1a36b14e-f01b-4a21-bf5d-fbf689125881" />
+<img width="425" alt="Screenshot 2025-04-17 at 5 06 33 PM" src="https://github.com/user-attachments/assets/1a36b14e-f01b-4a21-bf5d-fbf689125881" />
 
 3. tools.py : Contains functions used in spectra_pipeline.ipynb and plot_results.ipynb. Included in the import statements.
 
