@@ -5,12 +5,23 @@ velocity detections. NEID files are made into templates, which are fed into the 
 from the pipeline so the resutls can be read and plotted in the appropriate notebook. This is where correlation coefficients are calculated,
 and k-means clustering is performed to identify groups of activity indicators.
 
+# Scientific Motivation
+
+Radial Velocity detections are one of the most robust ways of detecting exoplanets. When a planet orbits around its host star, the pull of the planet causes the star 
+to "wiggle" about the center of gravity between the two objects. This creates a Doppler-shifting effect--the star appears blue-shifted as it moves toward us,
+and red-shifted when it moves away from us. We can observe this effect through spectroscopy, which is a method of separating light into its component parts
+by wavelength using a diffraction grating. We observe the Doppler shift in the star's spectrum, as seen below.
+
+<img width="733" alt="image" src="https://github.com/user-attachments/assets/61169d92-72fe-4602-9734-629fd20d7ede" />
+
+
 It is divided into the following files, and notebooks should be run in this order:
 
 1. spectra_pipeline.ipynb : Begin with this notebook. This notebook reads in NEID spectra, creates a template (daily-averaged spectrum) for each day, and uses
 a linelist and these templates in the line-by-line analysis to match observed lines to theoretical ones and measure their parameter variations
 for each day. These measured dataproducts are saved to a .csv file, so they can be read-in in plot_results.ipynb.
 
+Below shows an example of a single absorption line from the NEID spectra. The spectra
 <img width="443" alt="Screenshot 2025-04-17 at 2 42 59 PM" src="https://github.com/user-attachments/assets/54a4eaf4-d6a3-4431-8e37-cdfd77397e96" />
 
 
